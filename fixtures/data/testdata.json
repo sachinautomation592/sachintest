@@ -1,0 +1,19 @@
+{
+  "formData": {
+    "firstName": "Sachin",
+    "lastName": "Tambe",
+    "email": "sachintambe@gmail.com",
+    "mobile": "9876543210"
+  },
+  "invalidFormData": {
+    "firstName": "Sachin",
+    "lastName": "Tambe",
+    "email": "invalid-email",
+    "mobile": "12345"
+  },
+  "expectedSubmissionData": {
+    "fullName": "Sachin Tambe",
+    "email": "sachintambe@gmail.com",
+    "mobile": "9876543210"
+  }
+}

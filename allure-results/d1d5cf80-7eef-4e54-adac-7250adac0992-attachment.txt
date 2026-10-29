@@ -1,0 +1,26 @@
+Link 1: About
+Link 2: Store
+Link 3: Gmail
+Link 4: Images
+Link 5: 
+Link 6: Sign in
+Link 7: 
+Link 8: हिन्दी
+Link 9: বাংলা
+Link 10: తెలుగు
+Link 11: मराठी
+Link 12: தமிழ்
+Link 13: ગુજરાતી
+Link 14: ಕನ್ನಡ
+Link 15: മലയാളം
+Link 16: ਪੰਜਾਬੀ
+Link 17: Advertising
+Link 18: Business
+Link 19: How Search works
+Link 20: Privacy
+Link 21: Terms
+Link 22: Search settings
+Link 23: Advanced search
+Link 24: Your data in Search
+Link 25: Search history
+Link 26: Search help

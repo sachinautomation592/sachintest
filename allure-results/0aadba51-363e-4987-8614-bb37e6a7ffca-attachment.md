@@ -1,0 +1,716 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Mytest.spec.ts >> Search for product in Flipkart and verify price
+- Location: tests\Mytest.spec.ts:3:5
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: locator('text=/₹s?[d,]+/').first()
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for locator('text=/₹s?[d,]+/').first()
+
+```
+
+```yaml
+- link "Flipkart":
+  - /url: /
+  - img "Flipkart"
+- link "Explore Plus":
+  - /url: /plus
+  - text: Explore Plus
+  - img
+- textbox "Search for products, brands and more": iPhone 13
+- button:
+  - img
+- link "Login":
+  - /url: /account/login?ret=/search%3Fq%3DiPhone%252013%26otracker%3Dsearch%26otracker1%3Dsearch%26marketplace%3DFLIPKART%26as-show%3Don%26as%3Doff
+- link "Become a Seller":
+  - /url: https://seller.flipkart.com/sell-online/?utm_source=fkwebsite&utm_medium=websitedirect
+- text: More
+- img
+- link "Cart":
+  - /url: /viewcart?exploreMode=true&preference=FLIPKART
+  - img
+  - text: Cart
+- text: Electronics
+- img
+- text: TVs & Appliances
+- img
+- text: Men
+- img
+- text: Women
+- img
+- text: Baby & Kids
+- img
+- text: Home & Furniture
+- img
+- text: Sports, Books & More
+- img
+- link "Flights":
+  - /url: /travel/flights?otracker=nmenu_Flights
+- link "Offer Zone":
+  - /url: /offers-list/top-deals?screen=dynamic&pk=themeViews%3DDT-OMU-A2%3ADT-OMU~widgetType%3DdealCard~contentType%3Dneo&otracker=nmenu_offer-zone
+- text: Filters CATEGORIES
+- img
+- link "Mobiles & Accessories":
+  - /url: /mobiles-accessories/pr?sid=tyy&q=iPhone+13&otracker=categorytree
+- img
+- link "Mobiles":
+  - /url: /mobiles/pr?sid=tyy,4io&q=iPhone+13&otracker=categorytree
+- text: Network Type
+- img
+- text: Brand
+- img
+- text: Apple Internal Storage
+- img
+- text: Price . . . . . .
+- combobox:
+  - option "Min" [selected]
+  - option "₹10000"
+  - option "₹15000"
+  - option "₹20000"
+  - option "₹30000"
+- text: to
+- combobox:
+  - option "₹10000"
+  - option "₹15000"
+  - option "₹20000"
+  - option "₹30000"
+  - option "₹30000+" [selected]
+- text: Ram
+- img
+- text: 1 GB and Below Battery Capacity
+- img
+- text: Processor Brand
+- img
+- text: Screen Size
+- img
+- text: Operating System
+- img
+- text: Type
+- img
+- text: Speciality
+- img
+- text: Resolution Type
+- img
+- text: Discount
+- img
+- text: 50% or more 40% or more 30% or more 20% or more 10% or more Clock Speed
+- img
+- text: Sim Type
+- img
+- text: Primary Camera
+- img
+- text: Customer Ratings
+- img
+- text: Offers
+- img
+- text: Special Price Buy More, Save More
+- img
+- text: "? Secondary Camera"
+- img
+- text: Number of Cores
+- img
+- text: Features
+- img
+- text: Availability
+- img
+- text: GST Invoice Available
+- img
+- link "Need help? Help me decide Buying Guide":
+  - /url: /buying-guide/mobiles?sid=tyy,4io&otracker=bg_from_browse_lhs
+  - text: Need help? Help me decide
+  - img
+  - img "Buying Guide"
+- link "Home":
+  - /url: /
+- img
+- link "Mobiles & Accessories":
+  - /url: /mobiles-accessories/pr?sid=tyy&marketplace=FLIPKART
+- img
+- link "Mobiles":
+  - /url: /mobiles/pr?sid=tyy,4io&marketplace=FLIPKART
+- text: Showing 1 – 24 of 470 results for "iPhone 13" Sort By Relevance Popularity Price -- Low to High Price -- High to Low Newest First
+- link "Apple iPhone 13 mini (Starlight, 128 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Starlight, 128 GB) 4.5 3,770 Ratings & 327 Reviews • 128 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹64,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-starlight-128-gb/p/itmcb65606f21fd3?pid=MOBG6VF5BXXWYEYM&lid=LSTMOBG6VF5BXXWYEYMUIISKG&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_1&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5BXXWYEYM.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Starlight, 128 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Starlight, 128 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 128 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹64,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini (Green, 128 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Green, 128 GB) 4.5 3,770 Ratings & 327 Reviews • 128 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹64,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-green-128-gb/p/itm0888bb6d1e563?pid=MOBGC9VGEFHPSSNA&lid=LSTMOBGC9VGEFHPSSNAYTBHJL&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_2&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBGC9VGEFHPSSNA.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Green, 128 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Green, 128 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 128 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹64,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini (Green, 256 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Green, 256 GB) 4.5 3,770 Ratings & 327 Reviews • 256 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹74,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-green-256-gb/p/itm3e9566d87023e?pid=MOBGC9VGY3UYTKYB&lid=LSTMOBGC9VGY3UYTKYBMZJC9D&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_3&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBGC9VGY3UYTKYB.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Green, 256 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Green, 256 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 256 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹74,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini (Pink, 256 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Pink, 256 GB) 4.5 3,770 Ratings & 327 Reviews • 256 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹74,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-pink-256-gb/p/itme74fe970bccbe?pid=MOBG6VF526YUQCPN&lid=LSTMOBG6VF526YUQCPNNDXQWV&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_4&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF526YUQCPN.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Pink, 256 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Pink, 256 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 256 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹74,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini (Starlight, 256 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Starlight, 256 GB) 4.5 3,770 Ratings & 327 Reviews • 256 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹74,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-starlight-256-gb/p/itm4da13ee1ce622?pid=MOBG6VF5HZFFJC8U&lid=LSTMOBG6VF5HZFFJC8UPLLARV&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_5&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5HZFFJC8U.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Starlight, 256 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Starlight, 256 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 256 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹74,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini (Midnight, 128 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Midnight, 128 GB) 4.5 3,770 Ratings & 327 Reviews • 128 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹64,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-midnight-128-gb/p/itm6fb7dc262ba8c?pid=MOBG6VF5CPAWTCBH&lid=LSTMOBG6VF5CPAWTCBHFN3PUJ&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_6&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5CPAWTCBH.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Midnight, 128 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Midnight, 128 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 128 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹64,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini ((PRODUCT)RED, 256 GB) Currently unavailable Add to Compare Apple iPhone 13 mini ((PRODUCT)RED, 256 GB) 4.5 3,770 Ratings & 327 Reviews • 256 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹74,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-product-red-256-gb/p/itmb12f1bb4a3755?pid=MOBG6VF5AEZNGBHS&lid=LSTMOBG6VF5AEZNGBHSXXXL1F&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_7&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5AEZNGBHS.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini ((PRODUCT)RED, 256 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini ((PRODUCT)RED, 256 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 256 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹74,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini (Blue, 256 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Blue, 256 GB) 4.5 3,770 Ratings & 327 Reviews • 256 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹74,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-blue-256-gb/p/itm08b08b1944f85?pid=MOBG6VF5AHRMKUPP&lid=LSTMOBG6VF5AHRMKUPPMRFCMM&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_8&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5AHRMKUPP.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Blue, 256 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Blue, 256 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 256 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹74,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 Pro Max (Sierra Blue, 256 GB) Currently unavailable Add to Compare Apple iPhone 13 Pro Max (Sierra Blue, 256 GB) 4.6 1,963 Ratings & 190 Reviews • 256 GB ROM • 17.02 cm (6.7 inch) Super Retina XDR Display • 12MP + 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹1,39,900 Bank Offer":
+  - /url: /apple-iphone-13-pro-max-sierra-blue-256-gb/p/itmcb824a3301158?pid=MOBG6VF5Y3PWSVWG&lid=LSTMOBG6VF5Y3PWSVWGX8XHG1&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_9&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5Y3PWSVWG.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 Pro Max (Sierra Blue, 256 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 Pro Max (Sierra Blue, 256 GB) 4.6
+  - img
+  - text: 1,963 Ratings & 190 Reviews
+  - list:
+    - listitem: • 256 GB ROM
+    - listitem: • 17.02 cm (6.7 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹1,39,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini (Midnight, 512 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Midnight, 512 GB) 4.5 3,770 Ratings & 327 Reviews • 512 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹94,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-midnight-512-gb/p/itme54fcd72f420a?pid=MOBG6VF5EAVVTUZZ&lid=LSTMOBG6VF5EAVVTUZZZCY1DS&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_10&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5EAVVTUZZ.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Midnight, 512 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Midnight, 512 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 512 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹94,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 Pro Max (Graphite, 256 GB) Currently unavailable Add to Compare Apple iPhone 13 Pro Max (Graphite, 256 GB) 4.6 1,963 Ratings & 190 Reviews • 256 GB ROM • 17.02 cm (6.7 inch) Super Retina XDR Display • 12MP + 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹1,39,900 Bank Offer":
+  - /url: /apple-iphone-13-pro-max-graphite-256-gb/p/itm69ef2143f2bf5?pid=MOBG6VF5HYC5ZNHP&lid=LSTMOBG6VF5HYC5ZNHPS4EWIT&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_11&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5HYC5ZNHP.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 Pro Max (Graphite, 256 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 Pro Max (Graphite, 256 GB) 4.6
+  - img
+  - text: 1,963 Ratings & 190 Reviews
+  - list:
+    - listitem: • 256 GB ROM
+    - listitem: • 17.02 cm (6.7 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹1,39,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini (Pink, 512 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Pink, 512 GB) 4.5 3,770 Ratings & 327 Reviews • 512 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹94,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-pink-512-gb/p/itm56980f8bb46c6?pid=MOBG6VF5GF68DUG4&lid=LSTMOBG6VF5GF68DUG4X3HRIE&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_12&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5GF68DUG4.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Pink, 512 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Pink, 512 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 512 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹94,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 Pro Max (Alpine Green, 128 GB) Currently unavailable Add to Compare Apple iPhone 13 Pro Max (Alpine Green, 128 GB) 4.6 1,963 Ratings & 190 Reviews • 128 GB ROM • 17.02 cm (6.7 inch) Super Retina XDR Display • 12MP + 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹1,29,900 Bank Offer":
+  - /url: /apple-iphone-13-pro-max-alpine-green-128-gb/p/itm7f01c7d933487?pid=MOBGC9VGHDZZFKHX&lid=LSTMOBGC9VGHDZZFKHXUIM3T5&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_13&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBGC9VGHDZZFKHX.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 Pro Max (Alpine Green, 128 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 Pro Max (Alpine Green, 128 GB) 4.6
+  - img
+  - text: 1,963 Ratings & 190 Reviews
+  - list:
+    - listitem: • 128 GB ROM
+    - listitem: • 17.02 cm (6.7 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹1,29,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 Pro Max (Alpine Green, 512 GB) Currently unavailable Add to Compare Apple iPhone 13 Pro Max (Alpine Green, 512 GB) 4.6 1,963 Ratings & 190 Reviews • 512 GB ROM • 17.02 cm (6.7 inch) Super Retina XDR Display • 12MP + 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹1,59,900 Bank Offer":
+  - /url: /apple-iphone-13-pro-max-alpine-green-512-gb/p/itme5529c8267abe?pid=MOBGC9VGHZAHZH6H&lid=LSTMOBGC9VGHZAHZH6HZUM8NB&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_14&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBGC9VGHZAHZH6H.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 Pro Max (Alpine Green, 512 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 Pro Max (Alpine Green, 512 GB) 4.6
+  - img
+  - text: 1,963 Ratings & 190 Reviews
+  - list:
+    - listitem: • 512 GB ROM
+    - listitem: • 17.02 cm (6.7 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹1,59,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini (Blue, 128 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Blue, 128 GB) 4.5 3,770 Ratings & 327 Reviews • 128 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹64,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-blue-128-gb/p/itmdfa435f9c48f8?pid=MOBG6VF5FKSP3VTP&lid=LSTMOBG6VF5FKSP3VTPDLKKE8&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_15&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5FKSP3VTP.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Blue, 128 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Blue, 128 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 128 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹64,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 Pro Max (Sierra Blue, 1 TB) Currently unavailable Add to Compare Apple iPhone 13 Pro Max (Sierra Blue, 1 TB) 4.6 1,963 Ratings & 190 Reviews • 1 TB ROM • 17.02 cm (6.7 inch) Super Retina XDR Display • 12MP + 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹1,79,900 Bank Offer":
+  - /url: /apple-iphone-13-pro-max-sierra-blue-1-tb/p/itm9b0652604b403?pid=MOBG6VF5YHYZNNMM&lid=LSTMOBG6VF5YHYZNNMMVEANOR&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_16&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5YHYZNNMM.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 Pro Max (Sierra Blue, 1 TB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 Pro Max (Sierra Blue, 1 TB) 4.6
+  - img
+  - text: 1,963 Ratings & 190 Reviews
+  - list:
+    - listitem: • 1 TB ROM
+    - listitem: • 17.02 cm (6.7 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹1,79,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 Pro Max (Sierra Blue, 512 GB) Currently unavailable Add to Compare Apple iPhone 13 Pro Max (Sierra Blue, 512 GB) 4.6 1,963 Ratings & 190 Reviews • 512 GB ROM • 17.02 cm (6.7 inch) Super Retina XDR Display • 12MP + 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹1,59,900 Bank Offer":
+  - /url: /apple-iphone-13-pro-max-sierra-blue-512-gb/p/itm26f0b22cf2288?pid=MOBG6VF5ERKYQRP8&lid=LSTMOBG6VF5ERKYQRP8F4BLCU&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_17&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5ERKYQRP8.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 Pro Max (Sierra Blue, 512 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 Pro Max (Sierra Blue, 512 GB) 4.6
+  - img
+  - text: 1,963 Ratings & 190 Reviews
+  - list:
+    - listitem: • 512 GB ROM
+    - listitem: • 17.02 cm (6.7 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹1,59,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini ((PRODUCT)RED, 512 GB) Currently unavailable Add to Compare Apple iPhone 13 mini ((PRODUCT)RED, 512 GB) 4.5 3,770 Ratings & 327 Reviews • 512 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹94,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-product-red-512-gb/p/itm585815ebac94c?pid=MOBG6VF556QXTVKD&lid=LSTMOBG6VF556QXTVKDTZIF55&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_18&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF556QXTVKD.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini ((PRODUCT)RED, 512 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini ((PRODUCT)RED, 512 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 512 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹94,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini (Blue, 512 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Blue, 512 GB) 4.5 3,770 Ratings & 327 Reviews • 512 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹94,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-blue-512-gb/p/itm5db9409858571?pid=MOBG6VF5APJEYWTY&lid=LSTMOBG6VF5APJEYWTYFADEEI&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_19&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5APJEYWTY.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Blue, 512 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Blue, 512 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 512 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹94,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 Pro Max (Alpine Green, 256 GB) Currently unavailable Add to Compare Apple iPhone 13 Pro Max (Alpine Green, 256 GB) 4.6 1,963 Ratings & 190 Reviews • 256 GB ROM • 17.02 cm (6.7 inch) Super Retina XDR Display • 12MP + 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹1,39,900 Bank Offer":
+  - /url: /apple-iphone-13-pro-max-alpine-green-256-gb/p/itmd50ee574a9335?pid=MOBGC9VGH3SQEVZE&lid=LSTMOBGC9VGH3SQEVZEOQVWJR&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_20&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBGC9VGH3SQEVZE.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 Pro Max (Alpine Green, 256 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 Pro Max (Alpine Green, 256 GB) 4.6
+  - img
+  - text: 1,963 Ratings & 190 Reviews
+  - list:
+    - listitem: • 256 GB ROM
+    - listitem: • 17.02 cm (6.7 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹1,39,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini (Starlight, 512 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Starlight, 512 GB) 4.5 3,770 Ratings & 327 Reviews • 512 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹94,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-starlight-512-gb/p/itmee079194cf27b?pid=MOBG6VF5FF29YZ74&lid=LSTMOBG6VF5FF29YZ74UDHJ34&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_21&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5FF29YZ74.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Starlight, 512 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Starlight, 512 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 512 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹94,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 Pro Max (Silver, 256 GB) Currently unavailable Add to Compare Apple iPhone 13 Pro Max (Silver, 256 GB) 4.6 1,963 Ratings & 190 Reviews • 256 GB ROM • 17.02 cm (6.7 inch) Super Retina XDR Display • 12MP + 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹1,39,900 Bank Offer":
+  - /url: /apple-iphone-13-pro-max-silver-256-gb/p/itmff24c14e68d14?pid=MOBG6VF5WA2CZWF2&lid=LSTMOBG6VF5WA2CZWF2UYZNOM&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_22&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5WA2CZWF2.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 Pro Max (Silver, 256 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 Pro Max (Silver, 256 GB) 4.6
+  - img
+  - text: 1,963 Ratings & 190 Reviews
+  - list:
+    - listitem: • 256 GB ROM
+    - listitem: • 17.02 cm (6.7 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹1,39,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 Pro Max (Silver, 512 GB) Currently unavailable Add to Compare Apple iPhone 13 Pro Max (Silver, 512 GB) 4.6 1,963 Ratings & 190 Reviews • 512 GB ROM • 17.02 cm (6.7 inch) Super Retina XDR Display • 12MP + 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹1,59,900 Bank Offer":
+  - /url: /apple-iphone-13-pro-max-silver-512-gb/p/itm282cb973542f0?pid=MOBG6VF5FHNYCMTS&lid=LSTMOBG6VF5FHNYCMTSVUZVRN&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_23&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5FHNYCMTS.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 Pro Max (Silver, 512 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 Pro Max (Silver, 512 GB) 4.6
+  - img
+  - text: 1,963 Ratings & 190 Reviews
+  - list:
+    - listitem: • 512 GB ROM
+    - listitem: • 17.02 cm (6.7 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹1,59,900
+  - img
+  - text: Bank Offer
+- link "Apple iPhone 13 mini (Midnight, 256 GB) Currently unavailable Add to Compare Apple iPhone 13 mini (Midnight, 256 GB) 4.5 3,770 Ratings & 327 Reviews • 256 GB ROM • 13.72 cm (5.4 inch) Super Retina XDR Display • 12MP + 12MP | 12MP Front Camera • A15 Bionic Chip Processor • 1 year warranty for phone and 1 year warranty for in Box Accessories. ₹74,900 Bank Offer":
+  - /url: /apple-iphone-13-mini-midnight-256-gb/p/itmf75f164e38939?pid=MOBG6VF5SHP6JAGR&lid=LSTMOBG6VF5SHP6JAGRND17LS&marketplace=FLIPKART&q=iPhone+13&store=tyy%2F4io&srno=s_1_24&otracker=search&otracker1=search&fm=organic&iid=02974ef4-c41a-4dcb-9c32-ac83b6d934a6.MOBG6VF5SHP6JAGR.SEARCH&ppt=None&ppn=None&ssid=kyh4txh1gw0000001786011764021&qH=c3d519be0191fbf8&ov_redirect=true
+  - img "Apple iPhone 13 mini (Midnight, 256 GB)"
+  - text: Currently unavailable Add to Compare
+  - img
+  - text: Apple iPhone 13 mini (Midnight, 256 GB) 4.5
+  - img
+  - text: 3,770 Ratings & 327 Reviews
+  - list:
+    - listitem: • 256 GB ROM
+    - listitem: • 13.72 cm (5.4 inch) Super Retina XDR Display
+    - listitem: • 12MP + 12MP | 12MP Front Camera
+    - listitem: • A15 Bionic Chip Processor
+    - listitem: • 1 year warranty for phone and 1 year warranty for in Box Accessories.
+  - text: ₹74,900
+  - img
+  - text: Bank Offer
+- text: Page 1 of 20
+- navigation:
+  - link "1":
+    - /url: /search?q=iPhone+13&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=1
+  - link "2":
+    - /url: /search?q=iPhone+13&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=2
+  - link "3":
+    - /url: /search?q=iPhone+13&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=3
+  - link "4":
+    - /url: /search?q=iPhone+13&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=4
+  - link "5":
+    - /url: /search?q=iPhone+13&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=5
+  - link "6":
+    - /url: /search?q=iPhone+13&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=6
+  - link "7":
+    - /url: /search?q=iPhone+13&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=7
+  - link "8":
+    - /url: /search?q=iPhone+13&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=8
+  - link "9":
+    - /url: /search?q=iPhone+13&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=9
+  - link "10":
+    - /url: /search?q=iPhone+13&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=10
+  - link "Next":
+    - /url: /search?q=iPhone+13&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page=2
+- text: Did you find what you were looking for? Yes No
+- contentinfo:
+  - text: ABOUT
+  - link "Contact Us":
+    - /url: /helpcentre?otracker=footer_navlinks
+  - link "About Us":
+    - /url: https://corporate.flipkart.net/corporate-home
+  - link "Careers":
+    - /url: https://www.flipkartcareers.com/?otracker=footer_navlinks
+  - link "Flipkart Stories":
+    - /url: http://stories.flipkart.com/?otracker=footer_navlinks
+  - link "Press":
+    - /url: http://stories.flipkart.com/category/top-stories/news/
+  - link "Corporate Information":
+    - /url: /corporate-information
+  - text: GROUP COMPANIES
+  - link "Myntra":
+    - /url: https://www.myntra.com/
+  - link "Cleartrip":
+    - /url: https://www.cleartrip.com/
+  - link "Shopsy":
+    - /url: https://www.shopsy.in/
+  - text: HELP
+  - link "Payments":
+    - /url: /pages/payments
+  - link "Shipping":
+    - /url: /pages/shipping
+  - link "Cancellation & Returns":
+    - /url: /helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG
+  - link "FAQ":
+    - /url: /helpcentre?catalog=55c9c8e2b0000023002c1702&view=CATALOG
+  - text: CONSUMER POLICY
+  - link "Cancellation & Returns":
+    - /url: /pages/returnpolicy?otracker=footer_navlinks
+  - link "Terms Of Use":
+    - /url: /pages/terms?otracker=footer_navlinks
+  - link "Security":
+    - /url: /pages/paymentsecurity?otracker=footer_navlinks
+  - link "Privacy":
+    - /url: /pages/privacypolicy?otracker=footer_navlinks
+  - link "Sitemap":
+    - /url: /sitemap?otracker=footer_navlinks
+  - link "Grievance Redressal":
+    - /url: /pages/grievance-redressal-mechanism?otracker=footer_navlinks
+  - link "EPR Compliance":
+    - /url: /pages/ewaste-compliance-tnc?otracker=footer_navlinks
+  - link "FSSAI Food Safety Connect App":
+    - /url: https://fssai.gov.in/cms/food-safety-connect.php
+  - text: "Mail Us:"
+  - paragraph: Flipkart Internet Private Limited,
+  - paragraph: Buildings Alyssa, Begonia &
+  - paragraph: Clove Embassy Tech Village,
+  - paragraph: Outer Ring Road, Devarabeesanahalli Village,
+  - paragraph: Bengaluru, 560103,
+  - paragraph: Karnataka, India
+  - text: Social
+  - link:
+    - /url: https://www.facebook.com/flipkart
+    - img
+  - link:
+    - /url: https://www.twitter.com/flipkart
+    - img
+  - link:
+    - /url: https://www.youtube.com/flipkart
+    - img
+  - link:
+    - /url: https://www.instagram.com/flipkart
+    - img
+  - text: "Registered Office Address:"
+  - paragraph: Flipkart Internet Private Limited,
+  - paragraph: Buildings Alyssa, Begonia &
+  - paragraph: Clove Embassy Tech Village,
+  - paragraph: Outer Ring Road, Devarabeesanahalli Village,
+  - paragraph: Bengaluru, 560103,
+  - paragraph: Karnataka, India
+  - paragraph: "CIN : U51109KA2012PTC066107"
+  - paragraph:
+    - text: "Telephone:"
+    - link "044-45614709":
+      - /url: tel:044-45614709
+    - text: /
+    - link "044-45714709":
+      - /url: tel:044-45714709
+  - img
+  - link "Become a Seller":
+    - /url: https://seller.flipkart.com/?utm_source=fkwebsite&utm_medium=websitedirect
+  - img
+  - text: Advertise
+  - img
+  - link "Gift Cards":
+    - /url: /the-gift-card-store?otracker=footer_navlinks
+  - img
+  - link "Help Center":
+    - /url: /helpcentre?otracker=footer_navlinks
+  - text: © 2007-2026 Flipkart.com
+  - img
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | 
+  3  | test("Search for product in Flipkart and verify price", async ({ page }) => {
+  4  | 
+  5  | 	await page.goto('https://www.flipkart.com/');
+  6  | 	await page.waitForLoadState('domcontentloaded');
+  7  | 
+  8  | 	test.skip(
+  9  | 		await page.getByText('Site is overloaded', { exact: false }).isVisible().catch(() => false),
+  10 | 		'Flipkart is temporarily overloaded in this run.'
+  11 | 	);
+  12 | 
+  13 | 	const closeLoginPopup = page.locator('button:has-text("✕")');
+  14 | 	if (await closeLoginPopup.isVisible({ timeout: 2000 }).catch(() => false)) {
+  15 | 		await closeLoginPopup.click();
+  16 | 	}
+  17 | 
+  18 | 	const searchBox = page.locator('input[name="q"]').first();
+  19 | 	await expect(searchBox).toBeVisible();
+  20 | 	await searchBox.fill('iPhone 13');
+  21 | 	await page.locator('button[type="submit"]').click();
+  22 | 	await expect(page).toHaveURL(/\/search\?/i);
+  23 | 
+  24 | 	const firstPrice = page.locator('text=/₹\s?[\d,]+/').first();
+> 25 | 	await expect(firstPrice).toBeVisible();
+     |                           ^ Error: expect(locator).toBeVisible() failed
+  26 | 	await expect(firstPrice).toContainText(/₹\s?[\d,]+/);
+  27 | 
+  28 | 
+  29 | });
+  30 | 
+  31 | 
+  32 | 
+  33 | 
+  34 | 
+```

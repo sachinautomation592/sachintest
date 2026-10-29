@@ -1,0 +1,76 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Mytest.spec.ts >> Search Sachin on Google and verify results
+- Location: tests\Mytest.spec.ts:4:5
+
+# Error details
+
+```
+Error: expect(locator).toHaveValue(expected) failed
+
+Locator: locator('textarea[name="q"]')
+Expected: "Sachin"
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toHaveValue" with timeout 5000ms
+  - waiting for locator('textarea[name="q"]')
+
+```
+
+```yaml
+- separator
+- iframe
+- separator
+- text: About this page Our systems have detected unusual traffic from your computer network. This page checks to see if it's really you sending the requests, and not a robot.
+- link "Why did this happen?":
+  - /url: "#"
+- text: "IP address: 140.209.193.42 Time: 2026-08-05T06:08:36Z URL: https://www.google.com/search?q=Sachin&sca_esv=d0b419d1da6f3190&source=hp&ei=UdNyap6TB5agseMPjJXt8Q8&iflsig=ABILxe8AAAAAanLhYTVBGeroQ5RIRtp7YjZk0ul52UaI&ved=0ahUKEwje_8HH6YiWAxUWUGwGHYxKO_4Q4dUDCA4&uact=5&oq=Sachin&gs_lp=Egdnd3Mtd2l6IgZTYWNoaW4yCBAuGLEDGIAEMggQLhiABBixAzIIEAAYgAQYsQMyBRAAGIAEMggQABiABBixAzIIEC4YgAQYsQMyCBAuGIAEGLEDMggQLhiABBixAzIIEAAYgAQYsQMyCBAuGIAEGLEDSLMVUABYAHAAeACQAQCYAaYCoAGmAqoBAzItMbgBA8gBAPgBAZgCAaACswKYAwCSBwMzLTGgB6IQsgcDMy0xuAezAsIHAzMtMcgHCIAIAQ&sclient=gws-wiz&sei=ZNNyasfqDp6UhvcP8teXiQ4"
+```
+
+# Test source
+
+```ts
+  1  | 
+  2  | import { test, expect } from '@playwright/test';
+  3  | 
+  4  | test('Search Sachin on Google and verify results', async ({ page }) => {
+  5  |     await page.goto('https://www.google.com');
+  6  | 
+  7  |     // Accept cookies/consent dialog if present
+  8  |     const consentBtn = page.locator('button:has-text("Accept all"), button:has-text("I agree")');
+  9  |     if (await consentBtn.first().isVisible({ timeout: 3000 }).catch(() => false)) {
+  10 |         await consentBtn.first().click();
+  11 |     }
+  12 | 
+  13 |     await page.locator('textarea[role="combobox"]').fill('Sachin');
+  14 |     await page.keyboard.press('Enter');
+  15 | 
+  16 |     await page.waitForLoadState('networkidle');
+  17 | 
+  18 |     // Verify search query is retained in the search box
+> 19 |     await expect(page.locator('textarea[name="q"]')).toHaveValue('Sachin');
+     |                                                      ^ Error: expect(locator).toHaveValue(expected) failed
+  20 | 
+  21 |     // Verify page title contains the search term
+  22 |     await expect(page).toHaveTitle(/Sachin/i);
+  23 | 
+  24 |     // Verify at least one search result is visible
+  25 |     const results = page.locator('#search .g');
+  26 |     await expect(results.first()).toBeVisible();
+  27 | 
+  28 |     // Verify result headings contain relevant text
+  29 |     const firstResultHeading = results.first().locator('h3');
+  30 |     await expect(firstResultHeading).toBeVisible();
+  31 | 
+  32 |     console.log('First result heading:', await firstResultHeading.textContent());
+  33 | });
+  34 | 
+```

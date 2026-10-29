@@ -15,6 +15,8 @@ export class AlertsPage {
 
   private get immediateAlertButton(): Locator {
     return this.page.locator('#alertButton');
+
+    
   }
 
   private get timerAlertButton(): Locator {
